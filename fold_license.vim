@@ -29,7 +29,11 @@ function! GetCommentBlock(block_start, block_end)
 	call cursor(1,1)
 	exec "let s:comment_start = search('^\s*".a:block_start ."', 'c')"
 	exec "let s:comment_end = search('".a:block_end."','W')"
-	return [s:comment_start,s:comment_end]
+	if s:comment_start != s:comment_end
+		return [s:comment_start,s:comment_end]
+	else
+		return [0,0]
+	end
 endfunction
 
 "Get start and end from a comment line-by-line style
