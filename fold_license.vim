@@ -33,7 +33,7 @@ function! GetCommentBlock(block_start, block_end)
 		return [s:comment_start,s:comment_end]
 	else
 		return [0,0]
-	end
+	endif
 endfunction
 
 "Get start and end from a comment line-by-line style
@@ -53,7 +53,7 @@ function! GetCommentLine(line_start)
 		return [s:comment_start, s:comment_end]
 	else
 		return [0,0]
-	end
+	endif
 endfunction
 
 "Test if is a license header
