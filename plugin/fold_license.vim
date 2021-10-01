@@ -72,6 +72,7 @@ endfunction
 
 "Main function
 function! FoldLicense()
+	let l:ncp = getcurpos()
 	let s:BlocksToTest =  [
 				\[function("GetCommentBlock"),
 				\['\/\*', '\*\/']],
@@ -84,6 +85,7 @@ function! FoldLicense()
 	for config in s:BlocksToTest
 		call TestCommentBlock(config[0], config[1])
 	endfor
+	call setpos('.', l:ncp)
 
 endfunction
 
